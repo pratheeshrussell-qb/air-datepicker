@@ -309,7 +309,6 @@
   width: 32px;
   border-radius: 4px;
   -webkit-user-select: none;
-     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
   .datepicker--nav-action:hover {
@@ -390,7 +389,9 @@
   -ms-flex-align: center;
       align-items: center;
   padding: 4px;
-  position: relative; }
+  position: relative;
+  height: 100px; }
+  .datepicker--time.-am-pm- .datepicker--time-numbers,
   .datepicker--time.-am-pm- .datepicker--time-sliders {
     -ms-flex: 0 1 138px;
         flex: 0 1 138px;
@@ -403,6 +404,37 @@
       flex: 0 1 153px;
   margin-right: 10px;
   max-width: 153px; }
+
+.datepicker--time-numbers {
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px; }
+  .datepicker--time-numbers .datepicker--time-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    min-width: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    -ms-flex-align: start;
+        align-items: start; }
+    .datepicker--time-numbers .datepicker--time-row span {
+      padding: 0; }
+    .datepicker--time-numbers .datepicker--time-row input[type="number"] {
+      background-color: #ece0fd;
+      height: 60px;
+      width: 60px;
+      color: #7e62f0;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid #ece0fd;
+      border-radius: 4px;
+      padding: 5px;
+      box-sizing: border-box; }
+    .datepicker--time-numbers .datepicker--time-row input[type="number"]:focus {
+      border-color: #007BFF;
+      outline: none; }
 
 .datepicker--time-label {
   display: none;

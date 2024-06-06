@@ -65,7 +65,10 @@ $rangeThumbBg: #dedede;
   padding: $datepickerPadding;
   position: relative;
 
+  height: 100px;
+
   &.-am-pm- {
+    .datepicker--time-numbers,
     .datepicker--time-sliders {
       flex: 0 1 138px;
       max-width: 138px;
@@ -81,6 +84,40 @@ $rangeThumbBg: #dedede;
   flex: 0 1 153px;
   margin-right: 10px;
   max-width: 153px;
+}
+
+.datepicker--time-numbers {
+  display:flex;
+  margin-right: 10px;
+  //max-width: 153px;
+  .datepicker--time-row{
+    display:flex;
+    flex-direction: column;
+    min-width: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: start;
+    span{
+      padding:0;
+    }
+    input[type="number"] {
+      background-color: #ece0fd;
+      height: 60px;  
+      width: 60px;  
+      color: #7e62f0;  
+      font-size: 16px;  
+      text-align: center; 
+      border: 1px solid #ece0fd;
+      border-radius: 4px; 
+      padding: 5px;   
+      box-sizing: border-box;
+    }
+  
+    input[type="number"]:focus {
+        border-color: #007BFF; 
+        outline: none;     
+    }
+  }
 }
 
 .datepicker--time-label {

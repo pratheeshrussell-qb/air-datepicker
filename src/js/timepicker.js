@@ -1,21 +1,17 @@
 ;(function () {
     var template = '<div class="datepicker--time">' +
-        '<div class="datepicker--time-current">' +
-        '   <span class="datepicker--time-current-hours">#{hourVisible}</span>' +
-        '   <span class="datepicker--time-current-colon">:</span>' +
-        '   <span class="datepicker--time-current-minutes">#{minValue}</span>' +
-        '   <span class="datepicker--time-current-colon">:</span>' +
-        '   <span class="datepicker--time-current-seconds">#{secValue}</span>' +
-        '</div>' +
-        '<div class="datepicker--time-sliders">' +
+        '<div class="datepicker--time-sliders datepicker--time-numbers">' +
         '   <div class="datepicker--time-row">' +
-        '      <input type="range" name="hours" value="#{hourValue}" min="#{hourMin}" max="#{hourMax}" step="#{hourStep}"/>' +
+        '      <span>hr</span>' +
+        '      <input type="number" name="hours" value="#{hourValue}" min="#{hourMin}" max="#{hourMax}" step="#{hourStep}"/>' +
         '   </div>' +
         '   <div class="datepicker--time-row">' +
-        '      <input type="range" name="minutes" value="#{minValue}" min="#{minMin}" max="#{minMax}" step="#{minStep}"/>' +
+        '      <span>min</span>' +
+        '      <input type="number" name="minutes" value="#{minValue}" min="#{minMin}" max="#{minMax}" step="#{minStep}"/>' +
         '   </div>' +
         '   <div class="datepicker--time-row">' +
-        '      <input type="range" name="seconds" value="#{secValue}" min="#{secMin}" max="#{secMax}" step="#{secStep}"/>' +
+        '      <span>sec</span>' +
+        '      <input type="number" name="seconds" value="#{secValue}" min="#{secMin}" max="#{secMax}" step="#{secStep}"/>' +
         '   </div>' +
         '</div>' +
         '</div>',
@@ -146,7 +142,7 @@
                 _template = dp.template(template, data);
 
             this.$timepicker = $(_template).appendTo(this.d.$datepicker);
-            this.$ranges = $('[type="range"]', this.$timepicker);
+            this.$ranges = $('[type="number"]', this.$timepicker);
             this.$hours = $('[name="hours"]', this.$timepicker);
             this.$minutes = $('[name="minutes"]', this.$timepicker);
             this.$seconds = $('[name="seconds"]', this.$timepicker);
